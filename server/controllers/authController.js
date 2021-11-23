@@ -1,15 +1,35 @@
 const path = require('path');
 
 module.exports = {
-    serveHtml: (req, res) => {
-        res.sendFile(path.join(__dirname, '../../client/index.html'));
+    serveMonthHtml: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/index.html'));
     },
 
-    serveCss: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/index.css"));
+    serveMonthCss: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../client/december/index.css"));
     },
 
-    serveJs: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/main.js"));
+    serveMonthJs: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../client/december/main.js"));
+    },
+
+    serveWeek1Html: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/week-1.html'));
+    },
+
+    serveWeek2Html: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/week-2.html'));
+    },
+
+    serveWeek3Html: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/week-3.html'));
+    },
+
+    serveWeek4Html: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/week-4.html'));
+    },
+
+    serveWeek5Html: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/december/week-5.html'));    
     }
 }

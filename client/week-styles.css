@@ -69,6 +69,10 @@ header h3 {
     font-size: 15px;
 }
 
+.day-activities ul {
+    list-style-position: inside;
+}
+
 .december.day-box {
     border: 2px solid black;
     position: relative;

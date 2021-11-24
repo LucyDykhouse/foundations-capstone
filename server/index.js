@@ -9,13 +9,14 @@ app.use(express.json());
 
 app.get('/', authCtrl.serveMonthHtml);
 app.get('/styles', authCtrl.serveMonthCss);
-app.get('/js', authCtrl.serveMonthJs);
+app.get('/js', authCtrl.serveJs);
 app.get('/dec-week-1', authCtrl.serveWeek1Html);
 app.get('/dec-week-2', authCtrl.serveWeek2Html);
 app.get('/dec-week-3', authCtrl.serveWeek3Html);
 app.get('/dec-week-4', authCtrl.serveWeek4Html);
 app.get('/dec-week-5', authCtrl.serveWeek5Html);
 app.get('/week-styles', authCtrl.serveWeekStyles);
+app.post('/events', authCtrl.postEvent);
 
 const port = process.env.PORT || 5885;
 

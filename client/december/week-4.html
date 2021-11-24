@@ -62,7 +62,7 @@
       </section>
     </container>
 
-    <form id="event-form">
+    <form id="event-form-4">
       <label for="event">Create event: </label>
       <input id="event" type="text" value="Event name" />
       <label for="event-month">Date/Time:</label>
@@ -82,14 +82,14 @@
       <input type="submit" value="Submit" />
     </form>
 
-    <form id="occasion-form">
+    <form id="occasion-form-4">
       <label for="occasion">Create occasion: </label>
       <input id="occasion" type="text" value="Occasion name" />
       <label for="occasion-month">Date/Time:</label>
       <select id="occasion-month" name="months">
         <option value="12">12</option>
       </select>
-      <select id="event-day" name="days">
+      <select id="occasion-day" name="days">
         <option value="19">19</option>
         <option value="20">20</option>
         <option value="21">21</option>
@@ -101,6 +101,7 @@
       <input type="submit" value="Submit" />
     </form>
     <a href="/">Back to Calendar</a>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js"></script>
   </body>
 </html>

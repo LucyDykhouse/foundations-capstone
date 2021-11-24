@@ -1,4 +1,6 @@
 const path = require('path');
+eventList = [];
+evtCount = 0;
 
 module.exports = {
     serveMonthHtml: (req, res) => {
@@ -9,8 +11,8 @@ module.exports = {
         res.sendFile(path.join(__dirname, "../../client/index.css"));
     },
 
-    serveMonthJs: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/main.js"));
+    serveJs: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../client/december/main.js"));
     },
 
     serveWeek1Html: (req, res) => {
@@ -35,5 +37,21 @@ module.exports = {
 
     serveWeekStyles: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/week-styles.css'));
-    }
+    },
+
+    postEvent: (req, res) => {
+        let {evtName, evtMonth, evtDay, evtTime} = req.body;
+        let newEvt = {
+          id: evtCount + 1,
+          month: evtMonth,
+          day: evtDay,
+          name: evtName,
+          time: evtTime,
+          status: "unchecked"
+        };
+        evtCount++;
+        eventList.push(newEvt);
+        res.status(200).send(eventList[newEvt.id - 1]);
+      }
+
 }

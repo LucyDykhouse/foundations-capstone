@@ -10,11 +10,11 @@ app.use(express.json());
 app.get('/', authCtrl.serveMonthHtml);
 app.get('/styles', authCtrl.serveMonthCss);
 app.get('/js', authCtrl.serveMonthJs);
-app.get('/week-1', authCtrl.serveWeek1Html);
-app.get('/week-2', authCtrl.serveWeek2Html);
-app.get('/week-3', authCtrl.serveWeek3Html);
-app.get('/week-4', authCtrl.serveWeek4Html);
-app.get('/week-5', authCtrl.serveWeek5Html);
+app.get('/dec-week-1', authCtrl.serveWeek1Html);
+app.get('/dec-week-2', authCtrl.serveWeek2Html);
+app.get('/dec-week-3', authCtrl.serveWeek3Html);
+app.get('/dec-week-4', authCtrl.serveWeek4Html);
+app.get('/dec-week-5', authCtrl.serveWeek5Html);
 
 const port = process.env.PORT || 5885;
 

@@ -6,11 +6,11 @@ module.exports = {
     },
 
     serveMonthCss: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/index.css"));
+        res.sendFile(path.join(__dirname, "../../client/index.css"));
     },
 
     serveMonthJs: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/main.js"));
+        res.sendFile(path.join(__dirname, "../../client/main.js"));
     },
 
     serveWeek1Html: (req, res) => {

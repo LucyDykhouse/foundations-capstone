@@ -15,6 +15,7 @@ app.get('/dec-week-2', authCtrl.serveWeek2Html);
 app.get('/dec-week-3', authCtrl.serveWeek3Html);
 app.get('/dec-week-4', authCtrl.serveWeek4Html);
 app.get('/dec-week-5', authCtrl.serveWeek5Html);
+app.get('/week-styles', authCtrl.serveWeekStyles);
 
 const port = process.env.PORT || 5885;
 

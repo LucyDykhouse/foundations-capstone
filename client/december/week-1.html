@@ -1,12 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
     <title>December Week 1</title>
-</head>
-<body>
-    <h1>Served!</h1>
-</body>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="week-styles" />
+  </head>
+
+  <body>
+    <header class="december">
+      <h1>First week of December</h1>
+      <h3>11/28 - 12/4</h3>
+    </header>
+
+    <container class="days">
+      <section class="day-box december">
+        <div class="day-header december week-1">Su 11/28</div>
+        <div class="day-activities">
+          <ul id="ul-11-28"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">M 11/29</div>
+        <div class="day-activities">
+          <ul id="ul-11-29"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">Tu 11/30</div>
+        <div class="day-activities">
+          <ul id="ul-11-30"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">W 12/1</div>
+        <div class="day-activities">
+          <ul id="ul-12-1"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">Th 12/2</div>
+        <div class="day-activities">
+          <ul id="ul-12-2"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">F 12/3</div>
+        <div class="day-activities">
+          <ul id="ul-12-3"></ul>
+        </div>
+      </section>
+      <section class="day-box december">
+        <div class="day-header december week-1">Sa 12/4</div>
+        <div class="day-activities">
+          <ul id="ul-12-4"></ul>
+        </div>
+      </section>
+    </container>
+
+    <form id="event-form">
+      <label for="event">Create event: </label>
+      <input id="event" type="text" value="Event name" />
+      <label for="event-month">Date/Time:</label>
+      <select id="event-month" name="months">
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select id="event-day" name="days">
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <input id="event-time" type="text" value="10:00" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <form id="occasion-form">
+      <label for="occasion">Create occasion: </label>
+      <input id="occasion" type="text" value="Occasion name" />
+      <label for="occasion-month">Date/Time:</label>
+      <select id="occasion-month" name="months">
+        <option value="11">11</option>
+        <option value="12">12</option>
+      </select>
+      <select id="event-day" name="days">
+        <option value="28">28</option>
+        <option value="29">29</option>
+        <option value="30">30</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+    <a href="/">Back to Calendar</a>
+    <script src="js"></script>
+  </body>
 </html>

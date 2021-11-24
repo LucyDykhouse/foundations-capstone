@@ -31,5 +31,9 @@ module.exports = {
 
     serveWeek5Html: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/week-5.html'));    
+    },
+
+    serveWeekStyles: (req, res) => {
+        res.sendFile(path.join(__dirname, '../../client/week-styles.css'));
     }
 }

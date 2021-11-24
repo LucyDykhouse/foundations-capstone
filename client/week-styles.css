@@ -17,6 +17,11 @@ input, option, select {
     margin-bottom: 20px;
 }
 
+li button {
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
 a {
     color: black;
     font-size: 20px;

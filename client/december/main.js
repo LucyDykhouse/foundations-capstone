@@ -1,104 +1,120 @@
-// Access elements
-const eventForm1 = document.querySelector("#event-form-1");
-const eventForm2 = document.querySelector("#event-form-2");
-const eventForm3 = document.querySelector("#event-form-3");
-const eventForm4 = document.querySelector("#event-form-4");
-const eventForm5 = document.querySelector("#event-form-5");
-const occasionForm1 = document.querySelector('#occasion-form-1');
-const occasionForm2 = document.querySelector('#occasion-form-2');
-const occasionForm3 = document.querySelector('#occasion-form-3');
-const occasionForm4 = document.querySelector('#occasion-form-4');
-const occasionForm5 = document.querySelector('#occasion-form-5');
+// // Access elements
+// // const eventForm3 = document.querySelector("#event-form-3");
+// // const eventForm4 = document.querySelector("#event-form-4");
+// // const eventForm5 = document.querySelector("#event-form-5");
+// // const occasionForm3 = document.querySelector('#occasion-form-3');
+// // const occasionForm4 = document.querySelector('#occasion-form-4');
+// // const occasionForm5 = document.querySelector('#occasion-form-5');
 
-//const callDispEvt = ({ data: events }) => displayEvts(events);
+//   export const callDispEvt = ({ data: events }) => createEvtStructure(events);
 
-function displayEvts(evt) {
-    createEvtStructure(evt.data);
-}
+//     export const createEvtStructure = (arr) => {
+//       let evtBoxes = document.querySelectorAll('ul');
+//         for(let i = 0; i < evtBoxes.length; i++) {
+//           evtBoxes[i].innerHTML = ``;
+//         };
+//         for (let i = 0; i < arr.length; i++) {
+//           const newEvt = document.createElement('li');
+//           if(arr[i].status === 'unchecked') {
+//             newEvt.innerHTML = `${arr[i].time}: ${arr[i].name}
+//             <button id="${arr[i].id}">o</button>
+//             <button id="${arr[i].id}">x</button>`
+//           } else {
+//             newEvt.innerHTML = `<s>${arr[i].time}: ${arr[i].name}</s>`
+//           };
+  
+//           let dayOfEvent = document.querySelector(`#ul-${arr[i].month}-${arr[i].day}`);
+//           dayOfEvent.appendChild(newEvt);
+//         };
+//     };
 
-function createEvtStructure(evt) {
-    console.log(evt);
-    const newEvt = document.createElement('li');
-    if(evt.status === 'unchecked') {
-      newEvt.innerHTML = `${evt.time}: ${evt.name}
-            <button onclick="deleteEvt(${evt.id})">cancel</button>
-            <button onclick="updateEvt(${evt.id})">mark complete</button>`;
-    } else {
-      newEvt.innerHTML = `<s>${evt.time}: ${evt.name}</s>`
-    };
+//     export const createEvt = (body) => {
+//       axios
+//         .post("events/", body)
+//         .then(createOneEvtStructure);
+//     };
 
-    let dayOfEvent = document.querySelector(`#ul-${evt.month}-${evt.day}`);
-    dayOfEvent.appendChild(newEvt);  
-};
+//     export const submitEventHandler = (e) => {
+//       e.preventDefault();
+//       let eventBody = document.querySelector("#event");
+//       let eventMonth = document.querySelector('#event-month');
+//       let eventDay = document.querySelector("#event-day");
+//       let eventTime = document.querySelector("#event-time");
 
-const createEvt = (body) => {
-    axios.post("events/", body)
-        .then(displayEvts);
-};
+//       let bodyObj = {
+//         evtName: eventBody.value,
+//         evtMonth: eventMonth.value,
+//         evtDay: eventDay.value,
+//         evtTime: eventTime.value
+//       };
 
-function submitEventHandler(e) {
-    e.preventDefault();
-    let eventBody = document.querySelector("#event");
-    let eventMonth = document.querySelector('#event-month');
-    let eventDay = document.querySelector("#event-day");
-    let eventTime = document.querySelector("#event-time");
+//       createEvt(bodyObj);
 
-    let bodyObj = {
-      evtName: eventBody.value,
-      evtMonth: eventMonth.value,
-      evtDay: eventDay.value,
-      evtTime: eventTime.value
-    };
+//       eventBody.value = "";
+//       eventMonth.value = "";
+//       eventDay.value = "";
+//       eventTime.value = "";
+//     };
 
-    createEvt(bodyObj);
+//     export const submitOccasionHandler = (e) => {
+//       e.preventDefault();
+//       let occBody = document.querySelector("#occasion");
+//       let occMonth = document.querySelector('#occasion-month');
+//       let occDay = document.querySelector("#occasion-day");
 
-    eventBody.value = "";
-    eventMonth.value = "";
-    eventDay.value = "";
-    eventTime.value = "";
-};
+//       let bodyObj = {
+//         evtName: occBody.value,
+//         evtMonth: occMonth.value,
+//         evtDay: occDay.value,
+//         evtTime: 'All day'
+//       };
 
-function submitOccasionHandler(e) {
-    e.preventDefault();
-    let occBody = document.querySelector("#occasion");
-    let occMonth = document.querySelector('#occasion-month');
-    let occDay = document.querySelector("#occasion-day");
+//       createEvt(bodyObj);
 
-    let bodyObj = {
-      evtName: occBody.value,
-      evtMonth: occMonth.value,
-      evtDay: occDay.value,
-      evtTime: 'All day'
-    };
+//       occBody.value = "";
+//       occMonth.value = "";
+//       occDay.value = "";
+//     };
 
-    createEvt(bodyObj);
+// // if(eventForm1) {
+// //   eventForm1.addEventListener('submit', submitEventHandler);
+// //   occasionForm1.addEventListener('submit', submitOccasionHandler);
+// //   axios
+// //     .get('/events-week-1')
+// //     .then(callDispEvt);
+// //   axios
+// //     .put('/complete-week-1')
+// //     .then(callDispEvt);
+// // };
 
-    occBody.value = "";
-    occMonth.value = "";
-    occDay.value = "";
-};
+// // if(eventForm2) {
+// //   eventForm2.addEventListener('submit', submitEventHandler);
+// //   occasionForm2.addEventListener('submit', submitOccasionHandler);
+// //   axios
+// //     .get('/events-week-2')
+// //     .then(callDispEvt);
+// // };
 
-if(eventForm1) {
-  eventForm1.addEventListener('submit', submitEventHandler);
-  occasionForm1.addEventListener('submit', submitOccasionHandler);
-};
+// // if(eventForm3) {
+// //   eventForm3.addEventListener('submit', submitEventHandler);
+// //   occasionForm3.addEventListener('submit', submitOccasionHandler);
+// //   axios
+// //     .get('/events-week-3')
+// //     .then(callDispEvt);
+// // };
 
-if(eventForm2) {
-  eventForm2.addEventListener('submit', submitEventHandler);
-  occasionForm2.addEventListener('submit', submitOccasionHandler);
-};
+// // if (eventForm4) {
+// //   eventForm4.addEventListener('submit', submitEventHandler);
+// //   occasionForm4.addEventListener('submit', submitOccasionHandler);
+// //   axios
+// //     .get('/events-week-4')
+// //     .then(callDispEvt);
+// // };
 
-if(eventForm3) {
-  eventForm3.addEventListener('submit', submitEventHandler);
-  occasionForm3.addEventListener('submit', submitOccasionHandler);
-};
-
-if (eventForm4) {
-  eventForm4.addEventListener('submit', submitEventHandler);
-  occasionForm4.addEventListener('submit', submitOccasionHandler);
-};
-
-if (eventForm5) {
-  eventForm5.addEventListener('submit', submitEventHandler);
-  occasionForm5.addEventListener('submit', submitOccasionHandler);
-};
+// // if (eventForm5) {
+// //   eventForm5.addEventListener('submit', submitEventHandler);
+// //   occasionForm5.addEventListener('submit', submitOccasionHandler);
+// //   axios
+// //     .get('/events-week-5')
+// //     .then(callDispEvt);
+// // };

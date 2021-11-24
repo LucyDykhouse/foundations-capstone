@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Sedgwick Ave', cursive;
+}
+
+form {
+    font-size: 20px;
+    padding: 10px;
+    padding-left: 20px;
+}
+
+input, option, select {
+    font-size: 18px;
+    margin: 5px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: black;
+    font-size: 20px;
+    padding: 20px;
+}
+
+header {
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    padding-top: 50px;
+    padding-bottom: 15px;
+}
+
+header.december {
+    text-shadow: 2px 1px 0 rgb(173,201,220), 4px 3px 0 rgb(84,127,161);
+    background-image: url('https://image.shutterstock.com/image-illustration/winter-border-blue-snowflakes-on-260nw-522644752.jpg');
+    object-fit: cover;
+}
+
+header h3 {
+    text-shadow: none;
+    font-size: 20px;
+    letter-spacing: 2px;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin: 20px;
+}
+
+.day-box {
+    border: 2px solid black;
+    border-radius: 4px;
+    position: relative;
+}
+
+.day-header {
+    font-size: 20px;
+    border-bottom: 2px solid black;
+    text-align: center;
+    padding: 8px;
+}
+
+.day-activities {
+    padding: 5px;
+    font-size: 15px;
+}
+
+.december.day-box {
+    border: 2px solid black;
+    position: relative;
+    box-shadow: 3px 3px 5px 0 rgb(84,127,161);
+}
+
+.day-header.december.week-1 {
+    background-color: rgb(120, 166, 201);
+}
+
+.day-header.december.week-2 {
+    background-color: rgb(138, 180, 212);
+}
+
+.day-header.december.week-3 {
+    background-color: rgb(161, 196, 223);
+}
+
+.day-header.december.week-4 {
+    background-color: rgb(183, 215, 240);
+}
+
+.day-header.december.week-5 {
+    background-color: rgb(210, 233, 250);
+}
+

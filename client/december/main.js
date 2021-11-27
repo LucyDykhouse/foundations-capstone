@@ -1,120 +1,136 @@
-// // Access elements
-// // const eventForm3 = document.querySelector("#event-form-3");
-// // const eventForm4 = document.querySelector("#event-form-4");
-// // const eventForm5 = document.querySelector("#event-form-5");
-// // const occasionForm3 = document.querySelector('#occasion-form-3');
-// // const occasionForm4 = document.querySelector('#occasion-form-4');
-// // const occasionForm5 = document.querySelector('#occasion-form-5');
+// Access elements from html
+const eventForm1 = document.querySelector("#event-form-1");
+const occasionForm1 = document.querySelector("#occasion-form-1");
+const eventForm2 = document.querySelector("#event-form-2");
+const occasionForm2 = document.querySelector('#occasion-form-2');
+const eventForm3 = document.querySelector("#event-form-3");
+const eventForm4 = document.querySelector("#event-form-4");
+const eventForm5 = document.querySelector("#event-form-5");
+const occasionForm3 = document.querySelector('#occasion-form-3');
+const occasionForm4 = document.querySelector('#occasion-form-4');
+const occasionForm5 = document.querySelector('#occasion-form-5');
 
-//   export const callDispEvt = ({ data: events }) => createEvtStructure(events);
+// REST request methods
+const getEvents = () => {
+  axios.get("get-evts").then(callDispEvt);
+};
 
-//     export const createEvtStructure = (arr) => {
-//       let evtBoxes = document.querySelectorAll('ul');
-//         for(let i = 0; i < evtBoxes.length; i++) {
-//           evtBoxes[i].innerHTML = ``;
-//         };
-//         for (let i = 0; i < arr.length; i++) {
-//           const newEvt = document.createElement('li');
-//           if(arr[i].status === 'unchecked') {
-//             newEvt.innerHTML = `${arr[i].time}: ${arr[i].name}
-//             <button id="${arr[i].id}">o</button>
-//             <button id="${arr[i].id}">x</button>`
-//           } else {
-//             newEvt.innerHTML = `<s>${arr[i].time}: ${arr[i].name}</s>`
-//           };
-  
-//           let dayOfEvent = document.querySelector(`#ul-${arr[i].month}-${arr[i].day}`);
-//           dayOfEvent.appendChild(newEvt);
-//         };
-//     };
+const createEvt = (body) => {
+  axios.post("post-evt/", body).then(callDispEvt);
+};
 
-//     export const createEvt = (body) => {
-//       axios
-//         .post("events/", body)
-//         .then(createOneEvtStructure);
-//     };
+const updateEvt = (id) => {
+  axios.put(`complete-evt/${id}`).then(callDispEvt);
+};
 
-//     export const submitEventHandler = (e) => {
-//       e.preventDefault();
-//       let eventBody = document.querySelector("#event");
-//       let eventMonth = document.querySelector('#event-month');
-//       let eventDay = document.querySelector("#event-day");
-//       let eventTime = document.querySelector("#event-time");
+const deleteEvt = (id) => {
+  axios.delete(`delete-evt/${id}`).then(callDispEvt);
+};
 
-//       let bodyObj = {
-//         evtName: eventBody.value,
-//         evtMonth: eventMonth.value,
-//         evtDay: eventDay.value,
-//         evtTime: eventTime.value
-//       };
+// Format data from back end
+const callDispEvt = ({ data: events }) => createEvtStructure(events);
 
-//       createEvt(bodyObj);
+// Create elements on page using data from back end
+const createEvtStructure = (arr) => {
+  let evtBoxes = document.querySelectorAll("ul");
+  for (let i = 0; i < evtBoxes.length; i++) {
+    evtBoxes[i].innerHTML = ``;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    const newEvt = document.createElement("li");
 
-//       eventBody.value = "";
-//       eventMonth.value = "";
-//       eventDay.value = "";
-//       eventTime.value = "";
-//     };
+    // Loop to generate events for week view (if statement) or month view (else statement)
+    if (eventForm1 || eventForm2 || eventForm3 || eventForm4 || eventForm5) {
+      if (arr[i].status === "unchecked") {
+        newEvt.innerHTML = `${arr[i].time}: ${arr[i].name}
+              <button onclick="updateEvt(${arr[i].id})">o</button>
+              <button onclick="deleteEvt(${arr[i].id})">x</button>`;
+      } else {
+        newEvt.innerHTML = `<s>${arr[i].time}: ${arr[i].name}</s>`;
+      }
+    } else {
+      if (arr[i].status === "unchecked") {
+        newEvt.innerHTML = `${arr[i].time}: ${arr[i].name}`;
+      } else {
+        newEvt.innerHTML = `<s>${arr[i].time}: ${arr[i].name}</s>`;
+      }
+    };
+    
+    // Add new events to page
+    let dayOfEvent = document.querySelectorAll(`#ul-${arr[i].month}-${arr[i].day}`);
+    if (dayOfEvent) {dayOfEvent.forEach(day => day.appendChild(newEvt))};
+  }
+};
 
-//     export const submitOccasionHandler = (e) => {
-//       e.preventDefault();
-//       let occBody = document.querySelector("#occasion");
-//       let occMonth = document.querySelector('#occasion-month');
-//       let occDay = document.querySelector("#occasion-day");
+// Handle event form submission
+const submitEventHandler = (e) => {
+  e.preventDefault();
+  let eventBody = document.querySelector("#event");
+  let eventMonth = document.querySelector("#event-month");
+  let eventDay = document.querySelector("#event-day");
+  let eventTime = document.querySelector("#event-time");
 
-//       let bodyObj = {
-//         evtName: occBody.value,
-//         evtMonth: occMonth.value,
-//         evtDay: occDay.value,
-//         evtTime: 'All day'
-//       };
+  let bodyObj = {
+    evtName: eventBody.value,
+    evtMonth: eventMonth.value,
+    evtDay: eventDay.value,
+    evtTime: eventTime.value,
+  };
 
-//       createEvt(bodyObj);
+  createEvt(bodyObj);
 
-//       occBody.value = "";
-//       occMonth.value = "";
-//       occDay.value = "";
-//     };
+  eventBody.value = "";
+  eventMonth.value = "";
+  eventDay.value = "";
+  eventTime.value = "";
+};
 
-// // if(eventForm1) {
-// //   eventForm1.addEventListener('submit', submitEventHandler);
-// //   occasionForm1.addEventListener('submit', submitOccasionHandler);
-// //   axios
-// //     .get('/events-week-1')
-// //     .then(callDispEvt);
-// //   axios
-// //     .put('/complete-week-1')
-// //     .then(callDispEvt);
-// // };
+// Handle occasion form submission
+const submitOccasionHandler = (e) => {
+  e.preventDefault();
+  let occBody = document.querySelector("#occasion");
+  let occMonth = document.querySelector("#occasion-month");
+  let occDay = document.querySelector("#occasion-day");
 
-// // if(eventForm2) {
-// //   eventForm2.addEventListener('submit', submitEventHandler);
-// //   occasionForm2.addEventListener('submit', submitOccasionHandler);
-// //   axios
-// //     .get('/events-week-2')
-// //     .then(callDispEvt);
-// // };
+  let bodyObj = {
+    evtName: occBody.value,
+    evtMonth: occMonth.value,
+    evtDay: occDay.value,
+    evtTime: "All day",
+  };
 
-// // if(eventForm3) {
-// //   eventForm3.addEventListener('submit', submitEventHandler);
-// //   occasionForm3.addEventListener('submit', submitOccasionHandler);
-// //   axios
-// //     .get('/events-week-3')
-// //     .then(callDispEvt);
-// // };
+  createEvt(bodyObj);
 
-// // if (eventForm4) {
-// //   eventForm4.addEventListener('submit', submitEventHandler);
-// //   occasionForm4.addEventListener('submit', submitOccasionHandler);
-// //   axios
-// //     .get('/events-week-4')
-// //     .then(callDispEvt);
-// // };
+  occBody.value = "";
+  occMonth.value = "";
+  occDay.value = "";
+};
 
-// // if (eventForm5) {
-// //   eventForm5.addEventListener('submit', submitEventHandler);
-// //   occasionForm5.addEventListener('submit', submitOccasionHandler);
-// //   axios
-// //     .get('/events-week-5')
-// //     .then(callDispEvt);
-// // };
+//Add event listeners to all forms
+if (eventForm1 && occasionForm1) {
+  eventForm1.addEventListener("submit", submitEventHandler);
+  occasionForm1.addEventListener("submit", submitOccasionHandler);
+}
+
+if (eventForm2 && occasionForm2) {
+  eventForm2.addEventListener("submit", submitEventHandler);
+  occasionForm2.addEventListener("submit", submitOccasionHandler);
+}
+
+if (eventForm3 && occasionForm3) {
+  eventForm3.addEventListener("submit", submitEventHandler);
+  occasionForm3.addEventListener("submit", submitOccasionHandler);
+}
+
+if (eventForm4 && occasionForm4) {
+  eventForm4.addEventListener("submit", submitEventHandler);
+  occasionForm4.addEventListener("submit", submitOccasionHandler);
+}
+
+if (eventForm5 && occasionForm5) {
+  eventForm5.addEventListener("submit", submitEventHandler);
+  occasionForm5.addEventListener("submit", submitOccasionHandler);
+}
+
+// Get events for month and weeks
+getEvents();

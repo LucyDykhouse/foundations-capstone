@@ -1,23 +1,10 @@
 const path = require('path');
-evtList1 = [];
-evtCount1 = 0;
-evtList2 = [];
-evtCount2 = 0;
-evtList3 = [];
-evtCount3 = 0;
-evtList4 = [];
-evtCount4 = 0;
-evtList5 = [];
-evtCount5 = 0;
-
+evtList = [];
+evtCount = 0;
 
 module.exports = {
     serveMonthHtml: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/index.html'));
-    },
-
-    serveMonthJs: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/main.js"));
     },
 
     serveMonthCss: (req, res) => {
@@ -28,95 +15,64 @@ module.exports = {
         res.sendFile(path.join(__dirname, '../../client/december/week-1.html'));
     },
 
-    serveWeek1Js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/week-1.js"));
-    },
-
     serveWeek2Html: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/week-2.html'));
-    },
-
-    serveWeek2Js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/week-2.js"));
     },
 
     serveWeek3Html: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/week-3.html'));
     },
 
-    serveWeek3Js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/week-3.js"));
-    },
-
     serveWeek4Html: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/week-4.html'));
-    },
-
-    serveWeek4Js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/week-4.js"));
     },
 
     serveWeek5Html: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/december/week-5.html'));    
     },
 
-    serveWeek5Js: (req, res) => {
-        res.sendFile(path.join(__dirname, "../../client/december/week-5.js"));
-    },
-
     serveWeekStyles: (req, res) => {
         res.sendFile(path.join(__dirname, '../../client/week-styles.css'));
     },
 
-    postWeek1: (req, res) => {
+    serveJs: (req, res) => {
+        res.sendFile(path.join(__dirname, "../../client/december/main.js"));
+    },
+
+    getEvents: (req, res) => {
+        res.status(200).send(evtList);
+    },
+
+    postEvents: (req, res) => {
             let {evtName, evtMonth, evtDay, evtTime} = req.body;
             let newEvt = {
-                id: evtCount1 + 1,
+                id: evtCount + 1,
                 month: +evtMonth,
                 day: +evtDay,
                 name: evtName,
                 time: evtTime,
                 status: "unchecked"
             };
-            evtCount1++;
-            evtList1.push(newEvt);
-            res.status(200).send(evtList1);
-        },
-
-    eventsWeek1: (req, res) => {
-        res.status(200).send(evtList1);
+            evtCount++;
+            evtList.push(newEvt);
+            res.status(200).send(evtList);
     },
 
-    eventsWeek2: (req, res) => {
-        res.status(200).send(evtList2);
-    },
 
-    eventsWeek3: (req, res) => {
-        res.status(200).send(evtList3);
-    },
-
-    eventsWeek4: (req, res) => {
-        res.status(200).send(evtList4);
-    },
-
-    eventsWeek5: (req, res) => {
-        res.status(200).send(evtList5);
-    },
-
-    completeEvtWeek1: (req, res) => {
-        const evtIdx = evtList1.findIndex((evt) => {
+    markEventComplete: (req, res) => {
+        const evtIdx = evtList.findIndex((evt) => {
             return evt.id === +req.params.id;
         });
-        evtList1[evtIdx].status = "checked";
-        res.status(200).send(evtList1);
+        evtList[evtIdx].status = "checked";
+        res.status(200).send(evtList);
     },
 
-    deleteEvtWeek1: (req, res) => {
-        const evtIdx = evtList1.findIndex((evt) => {
+    deleteEvent: (req, res) => {
+        const evtIdx = evtList.findIndex((evt) => {
             return evt.id === +req.params.id;
         });
-        evtList1.splice(evtIdx, 1);
-        res.status(200).send(evtList1);
+        evtList.splice(evtIdx, 1);
+        res.status(200).send(evtList);
     }
 
 }

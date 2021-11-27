@@ -5,6 +5,10 @@
     font-family: 'Sedgwick Ave', cursive;
 }
 
+footer {
+    padding: 10px;
+}
+
 .month {
     font-size: 40px;
     text-align: center;
@@ -59,26 +63,40 @@ a:visited {
     font-size: 14px;
 }
 
-#week-1 .day-header {
+.day-activities ul {
+    list-style-position: inside;
+    text-align: left;
+}
+
+#week-1 .december.day-header {
     background-color: rgb(120, 166, 201);
 }
 
-#week-2 .day-header {
+#week-2 .december.day-header {
     background-color: rgb(138, 180, 212);
 }
 
-#week-3 .day-header {
+#week-3 .december.day-header {
     background-color: rgb(161, 196, 223);
 }
 
-#week-4 .day-header {
+#week-4 .december.day-header {
     background-color: rgb(183, 215, 240);
 }
 
-#week-5 .day-header {
+#week-5 .december.day-header {
     background-color: rgb(210, 233, 250);
 }
 
 #week-1:hover, #week-2:hover, #week-3:hover, #week-4:hover, #week-5:hover {
     transform: scale(1, 1.25);
+}
+
+footer a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    display: inline;
+    position: relative;
+    left: 39%;
 }

@@ -38,6 +38,13 @@ header {
 }
 
 header.december {
+    padding-top: 90px;
+    text-shadow: 2px 1px 0 rgb(186, 212, 192), 4px 3px 0 rgb(81, 102, 80);
+    background-image: url('https://i.pinimg.com/736x/f4/a1/d7/f4a1d7728a987dce535f814e7ca30195.jpg');
+    object-fit: cover;
+}
+
+header.january {
     text-shadow: 2px 1px 0 rgb(173,201,220), 4px 3px 0 rgb(84,127,161);
     background-image: url('https://image.shutterstock.com/image-illustration/winter-border-blue-snowflakes-on-260nw-522644752.jpg');
     object-fit: cover;
@@ -81,26 +88,56 @@ header h3 {
 .december.day-box {
     border: 2px solid black;
     position: relative;
+    box-shadow: 3px 3px 5px 0 rgb(81, 102, 80);
+}
+
+.january.day-box {
+    border: 2px solid black;
+    position: relative;
     box-shadow: 3px 3px 5px 0 rgb(84,127,161);
 }
 
 .day-header.december.week-1 {
-    background-color: rgb(120, 166, 201);
+    background-color: rgb(100, 132, 108);
 }
 
 .day-header.december.week-2 {
-    background-color: rgb(138, 180, 212);
+    background-color: rgb(125, 161, 132);
 }
 
 .day-header.december.week-3 {
-    background-color: rgb(161, 196, 223);
+    background-color: rgb(147, 184, 154);
 }
 
 .day-header.december.week-4 {
-    background-color: rgb(183, 215, 240);
+    background-color: rgb(186, 212, 192);
 }
 
 .day-header.december.week-5 {
+    background-color: rgb(213, 230, 216);
+}
+
+.day-header.january.week-1 {
+    background-color: rgb(120, 166, 201);
+}
+
+.day-header.january.week-2 {
+    background-color: rgb(138, 180, 212);
+}
+
+.day-header.january.week-3 {
+    background-color: rgb(161, 196, 223);
+}
+
+.day-header.january.week-4 {
+    background-color: rgb(183, 215, 240);
+}
+
+.day-header.january.week-5 {
     background-color: rgb(210, 233, 250);
+}
+
+.day-header.january.week-6 {
+    background-color: rgb(234, 242, 248);
 }
 

@@ -9,6 +9,8 @@ const eventForm4 = document.querySelector("#event-form-4");
 const occasionForm4 = document.querySelector('#occasion-form-4');
 const eventForm5 = document.querySelector("#event-form-5");
 const occasionForm5 = document.querySelector('#occasion-form-5');
+const eventForm6 = document.querySelector("#event-form-6");
+const occasionForm6 = document.querySelector('#occasion-form-6');
 
 // REST request methods
 const getEvents = () => {
@@ -40,7 +42,7 @@ const createEvtStructure = (arr) => {
     const newEvt = document.createElement("li");
 
     // Loop to generate events for week view (if statement) or month view (else statement)
-    if (eventForm1 || eventForm2 || eventForm3 || eventForm4 || eventForm5) {
+    if (eventForm1 || eventForm2 || eventForm3 || eventForm4 || eventForm5 || eventForm6) {
       if (arr[i].status === "unchecked") {
         newEvt.innerHTML = `${arr[i].time}: ${arr[i].name}
               <button onclick="updateEvt(${arr[i].id})">o</button>
@@ -130,6 +132,11 @@ if (eventForm4 && occasionForm4) {
 if (eventForm5 && occasionForm5) {
   eventForm5.addEventListener("submit", submitEventHandler);
   occasionForm5.addEventListener("submit", submitOccasionHandler);
+}
+
+if (eventForm6 && occasionForm6) {
+  eventForm6.addEventListener("submit", submitEventHandler);
+  occasionForm6.addEventListener("submit", submitOccasionHandler);
 }
 
 // Get events for month and weeks

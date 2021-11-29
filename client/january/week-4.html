@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>January Week 4</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="week-styles" />
+  </head>
+
+  <body>
+    <header class="january">
+      <h1>Fourth week of January</h1>
+      <h3>1/16 - 1/22</h3>
+    </header>
+
+    <container class="days">
+      <section class="day-box january">
+        <div class="day-header january week-4">Su 1/16</div>
+        <div class="day-activities">
+          <ul id="ul-1-16"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">M 1/17</div>
+        <div class="day-activities">
+          <ul id="ul-1-17"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">Tu 1/18</div>
+        <div class="day-activities">
+          <ul id="ul-1-18"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">W 1/19</div>
+        <div class="day-activities">
+          <ul id="ul-1-19"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">Th 1/20</div>
+        <div class="day-activities">
+          <ul id="ul-1-20"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">F 1/21</div>
+        <div class="day-activities">
+          <ul id="ul-1-21"></ul>
+        </div>
+      </section>
+      <section class="day-box january">
+        <div class="day-header january week-4">Sa 1/22</div>
+        <div class="day-activities">
+          <ul id="ul-1-22"></ul>
+        </div>
+      </section>
+    </container>
+
+    <form id="event-form-4">
+      <label for="event">Create event: </label>
+      <input id="event" type="text" value="Event name" />
+      <label for="event-month">Date/Time:</label>
+      <select id="event-month" name="months">
+        <option value="1">1</option>
+      </select>
+      <select id="event-day" name="days">
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+      </select>
+      <input id="event-time" type="text" value="10 am" />
+      <input type="submit" value="Submit" />
+    </form>
+
+    <form id="occasion-form-4">
+      <label for="occasion">Create occasion: </label>
+      <input id="occasion" type="text" value="Occasion name" />
+      <label for="occasion-month">Date/Time:</label>
+      <select id="occasion-month" name="months">
+        <option value="1">1</option>
+      </select>
+      <select id="occasion-day" name="days">
+        <option value="16">16</option>
+        <option value="17">17</option>
+        <option value="18">18</option>
+        <option value="19">19</option>
+        <option value="20">20</option>
+        <option value="21">21</option>
+        <option value="22">22</option>
+      </select>
+      <input type="submit" value="Submit" />
+    </form>
+    <a href="january">Back to Calendar</a>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="jan-js"></script>
+  </body>
+</html>

@@ -50,6 +50,13 @@ header.january {
     object-fit: cover;
 }
 
+header.february {
+    padding-top: 90px;
+    text-shadow: 2px 1px 0 rgb(252, 218, 233), 4px 3px 0 rgb(242, 64, 95);
+    background-image: url('https://media.istockphoto.com/vectors/loopable-love-frame-pink-heart-shaped-confetti-forming-a-header-for-vector-id1195607900?k=20&m=1195607900&s=170667a&w=0&h=vM_IGCVZFZnV4bNya2HRB_lWZTmmiAuUubhfqdfZmgI=');
+    object-fit: cover;
+}
+
 header h3 {
     text-shadow: none;
     font-size: 20px;
@@ -97,6 +104,12 @@ header h3 {
     box-shadow: 3px 3px 5px 0 rgb(84,127,161);
 }
 
+.february.day-box {
+    border: 2px solid black;
+    position: relative;
+    box-shadow: 3px 3px 3px 0 rgb(242, 64, 95);
+}
+
 .day-header.december.week-1 {
     background-color: rgb(100, 132, 108);
 }
@@ -139,5 +152,25 @@ header h3 {
 
 .day-header.january.week-6 {
     background-color: rgb(234, 242, 248);
+}
+
+.day-header.february.week-1 {
+    background-color: rgb(236, 91, 116);
+}
+
+.day-header.february.week-2 {
+    background-color: rgb(238, 121, 141);
+}
+
+.day-header.february.week-3 {
+    background-color: rgb(241, 149, 165);
+}
+
+.day-header.february.week-4 {
+    background-color: rgb(241, 178, 188);
+}
+
+.day-header.february.week-5 {
+    background-color: rgb(240, 207, 213);
 }
 

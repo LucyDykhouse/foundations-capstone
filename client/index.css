@@ -5,14 +5,10 @@
     font-family: 'Sedgwick Ave', cursive;
 }
 
-footer {
-    padding: 10px;
-}
-
 .month {
     font-size: 40px;
     text-align: center;
-    letter-spacing: 3px;
+    letter-spacing: 5px;
     margin-bottom: 10px;
     padding-top: 90px;
     padding-bottom: 15px;
@@ -27,6 +23,12 @@ footer {
 .month.january {
     text-shadow: 2px 1px 0 rgb(173,201,220), 4px 3px 0 rgb(84,127,161);
     background-image: url('https://image.shutterstock.com/image-illustration/winter-border-blue-snowflakes-on-260nw-522644752.jpg');
+    object-fit: cover;
+}
+
+.month.february {
+    text-shadow: 2px 1px 0 rgb(252, 218, 233), 4px 3px 0 rgb(242, 64, 95);
+    background-image: url('https://media.istockphoto.com/vectors/loopable-love-frame-pink-heart-shaped-confetti-forming-a-header-for-vector-id1195607900?k=20&m=1195607900&s=170667a&w=0&h=vM_IGCVZFZnV4bNya2HRB_lWZTmmiAuUubhfqdfZmgI=');
     object-fit: cover;
 }
 
@@ -59,6 +61,10 @@ a:visited {
 
 .january.day-box {
     box-shadow: 3px 3px 3px 0 rgb(84,127,161);
+}
+
+.february.day-box {
+    box-shadow: 3px 3px 3px 0 rgb(242, 64, 95);
 }
 
 .day-header {
@@ -122,8 +128,32 @@ a:visited {
     background-color: rgb(234, 242, 248);
 }
 
+#week-1 .february.day-header {
+    background-color: rgb(236, 91, 116);
+}
+
+#week-2 .february.day-header {
+    background-color: rgb(238, 121, 141);
+}
+
+#week-3 .february.day-header {
+    background-color: rgb(241, 149, 165);
+}
+
+#week-4 .february.day-header {
+    background-color: rgb(241, 178, 188);
+}
+
+#week-5 .february.day-header {
+    background-color: rgb(240, 207, 213);
+}
+
 #week-1:hover, #week-2:hover, #week-3:hover, #week-4:hover, #week-5:hover, #week-6:hover {
     transform: scale(1, 1.25);
+}
+
+footer {
+    padding: 10px;
 }
 
 footer a {
@@ -131,6 +161,14 @@ footer a {
     text-decoration: none;
     font-size: 20px;
     display: inline;
+}
+
+#dec-month-links a, #feb-month-links a {
     position: relative;
-    left: 44%;
+    left: 45%;
+}
+
+#jan-month-links a {
+    position: relative;
+    left: 36%;
 }

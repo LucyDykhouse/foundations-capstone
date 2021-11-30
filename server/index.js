@@ -1,10 +1,8 @@
 const express = require('express');
-const cors = require('cors');
 const authCtrl = require('./controllers/authController');
 
 const app = express();
 
-app.use(cors());
 app.use(express.json());
 
 // Enpoints

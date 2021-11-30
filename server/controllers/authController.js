@@ -1,66 +1,10 @@
 const path = require('path');
 
 // Simulating a seed file
-evtList = [
-    {id:1, 
-    month:12, 
-    day:31, 
-    name:"New Year's Eve", 
-    time:"All day", 
-    status:"unchecked"}, 
-    
-    {id:2, 
-    month:1, 
-    day:1, 
-    name:"New Year's Day", 
-    time:"All day", 
-    status:"unchecked"}, 
-    
-    {id:3, 
-    month:12, 
-    day:3, 
-    name:"Watch Demos", 
-    time:"2 pm", 
-    status:"unchecked"}, 
-    
-    {id:4, 
-    month:12,
-    day:4, 
-    name:"UofM vs Iowa", 
-    time:"8 pm", 
-    status:"unchecked"}, 
-    
-    {id:5, 
-    month:11, 
-    day:30, 
-    name:"Record Demo", 
-    time:"3 pm", 
-    status:"checked"}, 
-    
-    {id:6, 
-    month:12, 
-    day:5, 
-    name:"Lions' First Win?", 
-    time:"1 pm", 
-    status:"unchecked"}, 
-    
-    {id:7, 
-    month:1, 
-    day:9, 
-    name:"Lions' 16th Loss?", 
-    time:"1 pm", 
-    status:"unchecked"}, 
-    
-    {id:8,
-    month:12, 
-    day:6, 
-    name:"Begin specializations", 
-    time:"9 am", 
-    status:"unchecked"}
-];
+evtList = [];
 
 // Number of events in array evtList
-evtCount = 8;
+evtCount = 0;
 
 // Functions to export to index.js
 module.exports = {

@@ -34,6 +34,7 @@ app.get('/get-evts', authCtrl.getEvents);
 app.post('/post-evt', authCtrl.postEvents);
 app.put('/complete-evt/:id', authCtrl.markEventComplete);
 app.delete('/delete-evt/:id', authCtrl.deleteEvent);
+
 const port = process.env.PORT || 5885;
 
 app.listen(port, () => console.log(`Server is cruising on port ${port}`));

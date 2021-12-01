@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Sedgwick Ave', cursive;
+    zoom: 95%;
 }
 
 .month {
@@ -165,10 +166,10 @@ footer a {
 
 #dec-month-links a, #feb-month-links a {
     position: relative;
-    left: 45%;
+    left: 46%;
 }
 
 #jan-month-links a {
     position: relative;
-    left: 36%;
+    left: 39.5%;
 }

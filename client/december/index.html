@@ -15,8 +15,12 @@
       <h1 id="month">DECEMBER</h1>
     </header>
 
+
     <!-- Below is the html that generates every calendar day -->
-    <!-- All days are stored in the .days container, and every seven days are wrapped in a week -->
+    <!-- All days are stored in the .days container, and every seven days are wrapped in a #week section -->
+
+
+    <!-- List day names -->
     <container class="days">
         <section id="week-days">
             <div>Sun</div>
@@ -28,6 +32,7 @@
             <div>Sat</div>
         </section>
 
+      <!-- Week 1 -->
       <section id="week-1" class="december">
           <a href="dec-week-1">
               <container class="day-box december">
@@ -81,6 +86,7 @@
           </a>
       </section>
 
+      <!-- Week 2 -->
       <section id="week-2" class="december">
           <a href='dec-week-2'>
 
@@ -135,6 +141,7 @@
           </a>
       </section>
 
+      <!-- Week 3 -->
       <section id="week-3" class="december">
           <a href='dec-week-3'>
               <container class="day-box december">
@@ -188,6 +195,7 @@
           </a>
       </section>
 
+      <!-- Week 4 -->
       <section id="week-4" class="december">
           <a href="dec-week-4">
 
@@ -242,6 +250,7 @@
           </a>
       </section>
 
+      <!-- Week 5 -->
       <section id="week-5" class="december">
           <a href="dec-week-5">
 
@@ -296,9 +305,14 @@
           </a>
       </section>
     </container>
+    <!-- End of all calendar days -->
+
+    <!-- Footer to navigate to other calendar months -->
     <footer id="dec-month-links">
       <a href="january">January &rarr;</a>
     </footer>
+
+    <!-- Add axios via cdn and provide path to javascript file -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js"></script>
   </body>

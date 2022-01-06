@@ -15,8 +15,12 @@
       <h1 id="month">JANUARY</h1>
     </header>
 
+
     <!-- Below is the html that generates every calendar day -->
     <!-- All days are stored in the .days container, and every seven days are wrapped in a week -->
+
+
+    <!-- List day names-->
     <container class="days">
         <section id="week-days">
             <div>Sun</div>
@@ -28,6 +32,7 @@
             <div>Sat</div>
         </section>
 
+      <!-- Week 1 -->
       <section id="week-1" class="january">
           <a href="jan-week-1">
               <container class="day-box january">
@@ -81,6 +86,7 @@
           </a>
       </section>
 
+      <!-- Week 2 -->
       <section id="week-2" class="january">
           <a href='jan-week-2'>
 
@@ -135,6 +141,7 @@
           </a>
       </section>
 
+      <!-- Week 3 -->
       <section id="week-3" class="january">
           <a href='jan-week-3'>
               <container class="day-box january">
@@ -188,6 +195,7 @@
           </a>
       </section>
 
+      <!-- Week 4 -->
       <section id="week-4" class="jan">
           <a href="jan-week-4">
 
@@ -242,6 +250,7 @@
           </a>
       </section>
 
+      <!-- Week 5 -->
       <section id="week-5" class="january">
           <a href="jan-week-5">
 
@@ -295,6 +304,8 @@
               </container>
           </a>
       </section>
+
+      <!-- Week 6-->
       <section id="week-6" class="january">
         <a href="jan-week-6">
 
@@ -349,9 +360,14 @@
         </a>
     </section>
     </container>
+    <!-- End of all calendar days -->
+
+    <!-- Footer to navigate to other calendar months -->
     <footer id="jan-month-links">
       <span><a href="/">&larr; December</a><a href="february">|&emsp;&emsp;February &rarr;</a></span>
     </footer>
+
+    <!-- Add axios via cdn and provide path to javascript file -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js"></script>
   </body>

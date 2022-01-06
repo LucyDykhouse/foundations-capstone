@@ -12,11 +12,14 @@
   </head>
 
   <body>
+
+    <!-- Create week header -->
     <header class="december">
       <h1>Fourth week of December</h1>
       <h3>12/19 - 12/25</h3>
     </header>
 
+    <!-- Define all days in week -->
     <container class="days">
       <section class="day-box december">
         <div class="day-header december week-4">Su 12/19</div>
@@ -61,7 +64,9 @@
         </div>
       </section>
     </container>
+    <!-- End of week -->
 
+    <!-- Generate event and occasion forms -->
     <form id="event-form-4">
       <label for="event">Create event: </label>
       <input id="event" type="text" value="Event name" />
@@ -100,7 +105,11 @@
       </select>
       <input type="submit" value="Submit" />
     </form>
+
+    <!-- Link to return to calendar month view -->
     <a href="/">Back to Calendar</a>
+
+    <!-- Add axios via CDN and provide path to javascript -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="js"></script>
   </body>

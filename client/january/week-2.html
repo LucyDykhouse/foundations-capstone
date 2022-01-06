@@ -12,11 +12,14 @@
   </head>
 
   <body>
+
+    <!-- Create week header -->
     <header class="january">
       <h1>Second week of January</h1>
       <h3>1/2 - 1/8</h3>
     </header>
 
+    <!-- Define all days in week -->
     <container class="days">
       <section class="day-box january">
         <div class="day-header january week-2">Su 1/2</div>
@@ -61,7 +64,9 @@
         </div>
       </section>
     </container>
+    <!-- End of days -->
 
+    <!-- Generate event and occasion forms -->
     <form id="event-form-2">
       <label for="event">Create event: </label>
       <input id="event" type="text" value="Event name" />
@@ -100,7 +105,11 @@
       </select>
       <input type="submit" value="Submit" />
     </form>
+
+    <!-- Link to return to calendar month view -->
     <a href="january">Back to Calendar</a>
+
+    <!-- Add axios via CDN and provide path to javascript -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="jan-js"></script>
   </body>

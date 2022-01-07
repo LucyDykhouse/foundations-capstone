@@ -60,7 +60,7 @@ const createEvtStructure = (arr) => {
     
     // Add new events to page
     let dayOfEvent = document.querySelectorAll(`#ul-${arr[i].month}-${arr[i].day}`);
-    if (dayOfEvent) {dayOfEvent.forEach(day => day.appendChild(newEvt))} else {alert("Invalid date!")};
+    if (dayOfEvent) {dayOfEvent.forEach(day => day.appendChild(newEvt))};
   }
 };
 
